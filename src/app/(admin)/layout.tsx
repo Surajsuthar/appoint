@@ -1,6 +1,5 @@
-import { Navbar } from "@/components/navbar/navbar";
 import React from "react";
-
+import { Navbar } from "@/components/navbar/navbar";
 
 export default function adminLayout({
     children,
@@ -9,7 +8,7 @@ export default function adminLayout({
   }) {
     return (
         <main className="h-full w-full">
-            <section className="flex w-full h-[55px] border-b border-gray-700 fixed">
+            <section className="flex w-full h-[55px] border-b fixed">
                 <Navbar/>
             </section>
             {children}
