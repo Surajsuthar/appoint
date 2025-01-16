@@ -1,7 +1,7 @@
 "use client";
 
-import { LucideIcon, House } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { LucideIcon } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 interface NavbarOptionProps {
@@ -15,20 +15,29 @@ export const NavbarOption = ({
   href,
   icon: Icon,
 }: NavbarOptionProps) => {
-  const route = useRouter()
+  const route = useRouter();
+  const pathname = usePathname();
 
   return (
-    <button
-      className={cn("text-neutral-700  flex justify-center items-center font-semibold text-sm cursor-pointer hover:transition-all",
-        href=="/home" ? "bg-black" : ""
+    <div
+      className={cn(
+        " w-full flex text-muted-foreground items-center justify-center p-1.5 hover:text-white cursor-pointer hover:transition-all",
+        pathname === href ? "bg-black text-white" : ""
       )}
-      onClick={() => {
-        route.push(href)
-      }}
-      type="submit"
     >
-      <Icon size={18} />
-      <span className="ml-2">{label}</span>
-    </button>
+      <button
+        className={cn(
+          "flex justify-center items-center",
+        )}
+        onClick={() => {
+          route.push(href);
+        }}
+        type="submit"
+      >
+         <Icon size={18} />
+         <span className="ml-2 font-normal text-sm">{label}</span>
+      </button>
+     
+    </div>
   );
 };

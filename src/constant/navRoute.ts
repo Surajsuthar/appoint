@@ -9,7 +9,7 @@ import {
 export const allRoute = [
     {
         label: "Home",
-        href: "/",
+        href: "/home",
         icon: Home
     },
     {
