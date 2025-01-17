@@ -1,43 +1,27 @@
 "use client";
 
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs"
 import { LucideIcon } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-interface NavbarOptionProps {
-  label: string;
-  href: string;
-  icon: LucideIcon;
-}
-
-export const NavbarOption = ({
-  label,
-  href,
-  icon: Icon,
-}: NavbarOptionProps) => {
+export const NavbarOption = () => {
   const route = useRouter();
   const pathname = usePathname();
 
   return (
-    <div
-      className={cn(
-        " w-full flex text-muted-foreground items-center justify-center p-1.5 hover:text-white cursor-pointer hover:transition-all",
-        pathname === href ? "bg-black text-white" : ""
-      )}
-    >
-      <button
-        className={cn(
-          "flex justify-center items-center",
-        )}
-        onClick={() => {
-          route.push(href);
-        }}
-        type="submit"
-      >
-         <Icon size={18} />
-         <span className="ml-2 font-normal text-sm">{label}</span>
-      </button>
-     
-    </div>
+    <Tabs defaultValue="account" className="w-[400px] mr-4">
+      <TabsList className="grid w-full grid-cols-4">
+        <TabsTrigger value="account">Account</TabsTrigger>
+        <TabsTrigger value="passwor1d">Password</TabsTrigger>
+        <TabsTrigger value="passwo1rd">Password</TabsTrigger>
+        <TabsTrigger value="pas1sword">Password</TabsTrigger>
+      </TabsList>
+    </Tabs>
   );
 };

@@ -7,11 +7,13 @@ export default function adminLayout({
     children: React.ReactNode;
   }) {
     return (
-        <main className="h-full w-full">
-            <section className="flex w-full h-[55px] border-b fixed">
+        <main className="w-full">
+            <section className="flex w-full h-[65px] inset-y-0 fixed">
                 <Navbar/>
             </section>
-            {children}
+            <section className="mt-[66px]">
+              {children}
+            </section>
         </main>
     )
 }

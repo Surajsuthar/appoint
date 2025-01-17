@@ -1,9 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { Check, ChevronsUpDown } from "lucide-react"
+import { Check, ChevronsUpDown, LogOut } from "lucide-react"
 
-import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
   Command,
@@ -19,6 +18,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { allRoute } from "@/constant/navRoute"
+import { Label } from "../ui/label"
 
 const frameworks = allRoute
 
@@ -33,38 +33,29 @@ export function Searchbar() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[300px] justify-between"
+          className="w-[200px] font-semibold justify-between"
         >
-          {value
-            ? frameworks.find((framework) => framework.label === value)?.label
-            : "Select framework..."}
+          <div className="h-5 w-5 rounded-full bg-green-400"/>
+          The Tatto Artist
           <ChevronsUpDown className="opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[300px] p-0">
+      <PopoverContent className="w-[200px] p-0">
         <Command>
           <CommandList>
-            <CommandInput placeholder="select an oprion" />
-            <CommandEmpty>No framework found.</CommandEmpty>
-            <CommandGroup>
-              {frameworks.map((framework) => (
-                <CommandItem
-                  key={framework.label}
-                  value={framework.label}
-                  onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue)
-                    setOpen(false)
-                  }}
-                >
-                  {framework.label}
-                  <Check
-                    className={cn(
-                      "ml-auto",
-                      value === framework.label ? "opacity-100" : "opacity-0"
-                    )}
-                  />
+            <CommandGroup className="">
+                <CommandItem className="flex justify-between cursor-pointer">
+                  <button className="flex">
+                    Log out
+                  </button>
+                  <LogOut/>
                 </CommandItem>
-              ))}
+                <CommandItem className="flex mt-1 justify-between cursor-pointer">
+                  <button className="flex">
+                    Log out
+                  </button>
+                  <LogOut/>
+                </CommandItem>
             </CommandGroup>
           </CommandList>
         </Command>
