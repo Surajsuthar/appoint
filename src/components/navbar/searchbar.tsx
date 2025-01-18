@@ -1,65 +1,38 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Check, ChevronsUpDown, LogOut } from "lucide-react"
+import * as React from "react";
+import { Store } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Popover, PopoverTrigger } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
 
-import { Button } from "@/components/ui/button"
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
-import { allRoute } from "@/constant/navRoute"
-import { Label } from "../ui/label"
+interface SearchbarProps {
+  checked: boolean;
+}
 
-const frameworks = allRoute
-
-export function Searchbar() {
-  const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+export function Searchbar({ checked }: SearchbarProps) {
+  console.log("Searchbar", checked);
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover>
       <PopoverTrigger asChild>
         <Button
           variant="outline"
           role="combobox"
-          aria-expanded={open}
-          className="w-[200px] font-semibold justify-between"
+          className="min-w-[200px] font-semibold justify-between"
         >
-          <div className="h-5 w-5 rounded-full bg-green-400"/>
+          <div
+            className={cn(
+              "h-5 w-5 rounded-full",
+              checked
+                ? "transition-all bg-green-400"
+                : "transition-all bg-muted-foreground",
+            )}
+          />
           The Tatto Artist
-          <ChevronsUpDown className="opacity-50" />
+          <Store className="opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
-        <Command>
-          <CommandList>
-            <CommandGroup className="">
-                <CommandItem className="flex justify-between cursor-pointer">
-                  <button className="flex">
-                    Log out
-                  </button>
-                  <LogOut/>
-                </CommandItem>
-                <CommandItem className="flex mt-1 justify-between cursor-pointer">
-                  <button className="flex">
-                    Log out
-                  </button>
-                  <LogOut/>
-                </CommandItem>
-            </CommandGroup>
-          </CommandList>
-        </Command>
-      </PopoverContent>
     </Popover>
-  )
+  );
 }
