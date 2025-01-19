@@ -16,22 +16,22 @@ export const upperRoute = [
   },
   {
     label: "Appointment",
-    href: "/",
+    href: "/appointment",
     icon: CalendarDays,
   },
   {
     label: "Enquiry",
-    href: "/",
+    href: "/enquiry",
     icon: MessageSquareMore,
   },
   {
     label: "Profile",
-    href: "/",
+    href: "/profile",
     icon: UserRoundCog,
   },
   {
     label: "Setting",
-    href: "/",
+    href: "/setting",
     icon: Settings2,
   },
 ];

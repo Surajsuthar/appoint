@@ -6,12 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Popover, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 
-interface SearchbarProps {
-  checked: boolean;
-}
-
-export function Searchbar({ checked }: SearchbarProps) {
-  console.log("Searchbar", checked);
+export function ShopLable() {
+  const [change, setChange] = React.useState(false);
 
   return (
     <Popover>
@@ -20,11 +16,12 @@ export function Searchbar({ checked }: SearchbarProps) {
           variant="outline"
           role="combobox"
           className="min-w-[200px] font-semibold justify-between"
+          onClick={() => setChange(!change)}
         >
           <div
             className={cn(
               "h-5 w-5 rounded-full",
-              checked
+              change
                 ? "transition-all bg-green-400"
                 : "transition-all bg-muted-foreground",
             )}

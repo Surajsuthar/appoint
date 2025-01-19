@@ -1,6 +1,8 @@
 import React from "react";
 import { Navbar } from "@/components/navbar/navbar";
 import { Sidebar } from "@/components/navbar/sidebar";
+import { Input } from "@/components/ui/input";
+import { SearchBar } from "@/components/navbar/seach-box";
 
 export default function adminLayout({
   children,
@@ -15,7 +17,10 @@ export default function adminLayout({
       <section className="flex ml-[65px] w-[calc(100%-65px)] h-[65px] inset-y-0 fixed ">
         <Navbar />
       </section>
-      <section className="mt-[66px] ml-[65px]">{children}</section>
+      <section className="flex ml-[65px] w-[calc(100%-65px)] mt-[66px] h-[65px] inset-y-0 fixed">
+        <SearchBar />
+      </section>
+      <section className="mt-[132px] ml-[129px] mr-4">{children}</section>
     </main>
   );
 }

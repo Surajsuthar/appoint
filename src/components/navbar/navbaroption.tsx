@@ -13,8 +13,8 @@ export const NavbarOption = () => {
     <Tabs defaultValue="account" className="w-[400px] mr-4">
       <TabsList className="grid w-full grid-cols-4">
         <TabsTrigger value="account">Account</TabsTrigger>
-        <TabsTrigger value="passwor1d">Password</TabsTrigger>
-        <TabsTrigger value="passwo1rd">Password</TabsTrigger>
+        <TabsTrigger value="passwor1d">Contanct</TabsTrigger>
+        <TabsTrigger value="passwo1rd">Address</TabsTrigger>
         <TabsTrigger value="pas1sword">Password</TabsTrigger>
       </TabsList>
     </Tabs>
