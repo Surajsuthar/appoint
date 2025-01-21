@@ -1,4 +1,4 @@
-import { NavbarOption } from "@/components/navbar/navbaroption";
+import { NavbarOption } from "@/app/(admin)/account/_components/navbaroption";
 
 export default function Account() {
   return (
