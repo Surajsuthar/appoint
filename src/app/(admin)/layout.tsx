@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar } from "@/components/navbar/navbar";
 import { Sidebar } from "@/components/navbar/sidebar";
-import { Input } from "@/components/ui/input";
 import { SearchBar } from "@/components/navbar/seach-box";
 
 export default function adminLayout({

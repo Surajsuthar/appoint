@@ -21,7 +21,11 @@ export const BusinessInfoTab = () => {
           type, legal credentials, and industry specifics.
         </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-2"></CardContent>
+      <CardContent className="space-y-2">
+        <form>
+          
+        </form>
+      </CardContent>
       <CardFooter>
         <Button>Update</Button>
       </CardFooter>
