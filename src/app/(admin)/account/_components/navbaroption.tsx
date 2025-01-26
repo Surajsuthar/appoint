@@ -12,7 +12,7 @@ export const NavbarOption = () => {
   const pathname = usePathname();
 
   return (
-    <Tabs defaultValue="Business" className=" mr-4">
+    <Tabs defaultValue="Business"  className=" mr-4">
       <TabsList className="md:max-w-[700px] grid grid-cols-4">
         <TabsTrigger value="Business">Business Details</TabsTrigger>
         <TabsTrigger value="Contact">Contact Details</TabsTrigger>

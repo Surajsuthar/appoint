@@ -1,13 +1,13 @@
 "use client";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { SidebarOption } from "./sidebar-option";
-import { upperRoute, downRoute } from "@/constant/navRoute";
+import { upperRoute, downRoute } from "@/pages/navRoute";
 
 export const Sidebar = () => {
   const aboveRoutes = upperRoute;
   const seondRoute = downRoute;
   return (
-    <aside className="flex flex-col h-full w-full">
+    <aside className="flex flex-col w-full m-1 border rounded-sm">
       <section className="flex justify-center items-center mt-3.5">
         <Avatar>
           <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />

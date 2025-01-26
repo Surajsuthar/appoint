@@ -27,7 +27,7 @@ export const SidebarOption = ({
   };
 
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={100}>
       <Tooltip>
         <TooltipTrigger asChild>
           <button className="" onClick={() => handelClick(href)}>

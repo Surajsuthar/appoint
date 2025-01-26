@@ -1,7 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { Input } from "../ui/input";
-import { upperRoute, downRoute } from "@/constant/navRoute";
+import { upperRoute, downRoute } from "@/pages/navRoute";
 
 export const SearchBar = () => {
   const pathname = usePathname();
@@ -15,7 +15,7 @@ export const SearchBar = () => {
         <p className="ml-16 font-bold text-3xl">{pageName[0]?.label || sPageName[0]?.label}</p>
       </aside>
       <aside>
-        <Input placeholder="Search here" className="w-[250px] mr-4" />
+        
       </aside>
     </section>
   );

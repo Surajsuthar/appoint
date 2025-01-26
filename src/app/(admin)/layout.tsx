@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar } from "@/components/navbar/navbar";
 import { Sidebar } from "@/components/navbar/sidebar";
-import { SearchBar } from "@/components/navbar/seach-box";
+import { Separator } from "@/components/ui/separator";
 
 export default function adminLayout({
   children,
@@ -10,16 +10,20 @@ export default function adminLayout({
 }) {
   return (
     <main className="w-full">
-      <section className="flex w-[65px] h-full inset-y-0 z-40 fixed border-r rounded-sm">
+      <aside className="flex w-[65px] inset-y-0 fixed ">
         <Sidebar />
-      </section>
-      <section className="flex ml-[65px] w-[calc(100%-65px)] h-[65px] inset-y-0 fixed ">
-        <Navbar />
-      </section>
-      <section className="flex ml-[65px] w-[calc(100%-65px)] mt-[66px] h-[65px] inset-y-0 fixed">
-        <SearchBar />
-      </section>
-      <section className="mt-[132px] ml-[129px] mr-4">{children}</section>
+      </aside>
+      <div className="ml-[65px] flex-1 flex flex-col mr-4">
+        <header className="fixed top-2 left-[65px] right-3.5">
+          <div className="flex flex-col space-y-3 w-full">
+            <Navbar />
+          </div>
+        </header>
+        <div className="mt-[132px] ml-[65px]">
+          {children}
+        </div>
+      </div>
+      {/* <Separator className="bg-green-300 fixed"/> */}
     </main>
   );
 }
