@@ -15,7 +15,7 @@ export const SearchBar = () => {
         <p className="ml-16 font-bold text-3xl">{pageName[0]?.label || sPageName[0]?.label}</p>
       </aside>
       <aside>
-        
+        <Input placeholder="Search here" className="w-[250px]" />
       </aside>
     </section>
   );
