@@ -11,7 +11,7 @@ export default function adminLayout({
 }) {
   return (
     <main className="w-full">
-      <aside className="flex w-[65px] inset-y-0 fixed ">
+      <aside className="flex w-[65px] inset-y-0 fixed">
         <Sidebar />
       </aside>
       <div className="ml-[65px] flex-1 flex mt-1 z-10  flex-col mr-4">
@@ -21,7 +21,7 @@ export default function adminLayout({
             <SearchBar/>
           </div>
         </header>
-        <div className="mt-[132px] ml-[65px]">
+        <div className="mt-[132px] ml-[65px] ">
           {children}
         </div>
       </div>

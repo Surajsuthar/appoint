@@ -14,13 +14,13 @@ import {
   Calendar1,
 } from "lucide-react";
 
-interface MainRoute {
+export interface MainRoute {
   label: string,
   href: string,
   icon: LucideIcon
 }
 
-interface Route extends MainRoute {
+export interface Route extends MainRoute {
   children?: MainRoute[]
 }
 

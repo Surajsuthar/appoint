@@ -1,7 +1,9 @@
+import { EnquiryPage } from "./_components/enqury-page";
+
 export default function Enquiry(){
     return(
         <div>
-            Hello from enquiry
+            <EnquiryPage/>
         </div>
     )
 }
