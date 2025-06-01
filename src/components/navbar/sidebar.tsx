@@ -27,7 +27,7 @@ export const Sidebar = () => {
             );
           })}
         </section>
-        <section className="flex flex-col mb-12 items-center space-y-8 justify-center">
+        <section className="flex flex-col mb-8 items-center space-y-8 justify-center">
           {seondRoute.map((route) => {
             return (
               <SidebarOption
